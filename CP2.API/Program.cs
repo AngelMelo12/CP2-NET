@@ -2,6 +2,8 @@ using CP2.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
+Bootstrap.Start(builder.Services, builder.Configuration);
+
 // Add services to the container.
 
 builder.Services.AddControllers();
