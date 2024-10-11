@@ -18,7 +18,7 @@ namespace CP2.API.Controllers
         }
 
         /// <summary>
-        /// Metodo para obter todos os dados do Fornecedor
+        /// Metodo que busca os dados de todos os fornecedores
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -33,7 +33,10 @@ namespace CP2.API.Controllers
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodo que busca os dados de um fornecedor especificado por ID
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Produces<FornecedorEntity>]
         public IActionResult GetPorId(int id)
@@ -46,7 +49,10 @@ namespace CP2.API.Controllers
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodo que cadastra um novo fornecedor
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [Produces<FornecedorEntity>]
         public IActionResult Post([FromBody] FornecedorDto entity)
@@ -70,6 +76,10 @@ namespace CP2.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo que atualiza os dados de um fornecedor especificado por ID
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [Produces<FornecedorEntity>]
         public IActionResult Put(int id, [FromBody] FornecedorDto entity)
@@ -93,7 +103,10 @@ namespace CP2.API.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Metodo que exclui os dados de um fornecedor especificado por id
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [Produces<FornecedorEntity>]
         public IActionResult Delete(int id)

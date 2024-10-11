@@ -18,7 +18,7 @@ namespace CP2.API.Controllers
         }
 
         /// <summary>
-        /// Metodo para obter todos os dados do Vendedor
+        /// Metodo que busca os dados de todos os vendedores
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -33,7 +33,10 @@ namespace CP2.API.Controllers
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodo que busca os dados de um vendedor especificado por ID
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Produces<VendedorEntity>]
         public IActionResult GetPorId(int id)
@@ -46,7 +49,10 @@ namespace CP2.API.Controllers
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodo que cadastra um novo vendedor
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [Produces<VendedorEntity>]
         public IActionResult Post([FromBody] VendedorDto entity)
@@ -70,6 +76,10 @@ namespace CP2.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo que atualiza os dados de um vendedor especificado por ID
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [Produces<VendedorEntity>]
         public IActionResult Put(int id, [FromBody] VendedorDto entity)
@@ -94,6 +104,10 @@ namespace CP2.API.Controllers
         }
 
 
+        /// <summary>
+        /// Metodo que exclui os dados de um vendedor especificado por id
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [Produces<VendedorEntity>]
         public IActionResult Delete(int id)
